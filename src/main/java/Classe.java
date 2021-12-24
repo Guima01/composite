@@ -1,15 +1,21 @@
-public class Classe {
+public class Classe extends Item{
 
-    private Ficha heroi;
+    private String tipo;
 
-    public void setHeroi(Ficha heroi){
-        this.heroi = heroi;
+    public Classe(String descricao, String tipo) {
+        super(descricao);
+        this.tipo = tipo;
     }
 
-    public String getHeroi(){
-        if (this.heroi == null){
-            throw new NullPointerException(("Classe sem herói"));
-        }
-        return this.heroi.getFicha();
+    public String getTipo() {
+        return this.tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getItem() {
+        return "Classe: " + this.getDescricao() + " - Tipo: " + this.tipo + "\n";
     }
 }
